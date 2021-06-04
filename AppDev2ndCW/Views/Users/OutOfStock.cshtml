@@ -1,0 +1,95 @@
+﻿
+@{ Layout = "_DashboardLayout"; }
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="text-center">
+                <div class="row my-4">
+                    <div class="col-md-8 mx-auto">
+                        <img src="/img/out_of_stock.svg" alt="Out of Stock SVG" class="img-fluid" />
+                    </div>
+                </div>
+                <p class="h3">Items Out of Stock</p>
+                <p><code>The following list of items are currently out of stock</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div my-4>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <form action="/Users/OutofStock" method="post">
+                    <!--Apply Sort Filters -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-filter text-muted"></i>
+                            </span>
+                        </div>
+                        <select required id="sort" name="sort" class="form-control custom-select bg-white border-left-0 border-md">
+                            <option value="">Please choose a sorting filter</option>
+                            <option value="ascending">Item Name (Ascending)</option>
+                            <option value="quantity">Stock Quantity (High to Low)</option>
+                            <option value="stockDate">Stocked Date (Descending)</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary">Sort Table Data <i class="fas fa-sort ml-2"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-lg-11 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Stock Quantity</th>
+                                        @*<th scope="col">Author</th>
+                                         <th scope="col">Category</th>*@
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Stocked Date</th>
+                                        <th scope="col">Sales Date</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.Book_name</td>
+                                        <td>@item.Stock_Quantity</td>
+                                        @*<td>@item.Author_Id</td>
+                                        <td>@item.Category_Id</td>*@
+                                        <td>@item.Price</td>
+                                        <td>@item.Stocked_Date</td>
+                                        <td>@item.Sales_Date</td>
+                                        @*<th>
+                                         <a href="@Url.ActionLink("UpdateBooks", "Books")" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                         </th>*@
+                                        <th>
+                                            <a href="@Url.Action("DeleteBooksInventory","Books",new { item.Id} )" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                        </th>
+                                    </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

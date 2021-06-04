@@ -1,0 +1,104 @@
+﻿
+@{ Layout = "_DashboardLayout"; }
+
+
+<div class="container-fluid px-xl-5">
+    <section class="py-5">
+
+        <div class="row py-5 mt-4 align-items-center">
+
+            <!-- Update Customer Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form action="/Admin/EditCustomers/@ViewBag.customer_data.Id" method="post">
+                    <div class="row">
+
+                        <!-- Name -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="customerName" type="text" value="@ViewBag.customer_data.Customer_Name" name="customerName" placeholder="Customer Name" class="form-control bg-white border-left-0 border-md" required>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="email" type="email" value="@ViewBag.customer_data.Customer_Email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md" required>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-phone-square text-muted"></i>
+                                </span>
+                            </div>
+                            <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+                                <option value="">+977</option>
+                            </select>
+                            <input id="phoneNumber" type="number" name="phone" value="@ViewBag.customer_data.Customer_Contact" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3" required>
+                        </div>.
+
+                        <!-- Customer Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-map-marker-alt text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="customerAddress" type="text" value="@ViewBag.customer_data.Customer_Address" name="customerAddress" placeholder="Customer Address" class="form-control bg-white border-left-0 border-md" required>
+                        </div>
+
+
+                        <!-- Account Type -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user-tie text-muted"></i>
+                                </span>
+                            </div>
+                            <select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
+                                <option value="">Choose the membership type</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+
+                        <!-- Last Purchased Date -->
+                        <div class="col-md-12 mb-0">
+                            <label for="lastPurchasedDate">Last Purchased Date <i class="fas fa-ellipsis-h ml-2"></i></label>
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-calendar text-muted" ></i>
+                                </span>
+                            </div>
+                            <input type="date" name="lastDate" value="@ViewBag.customer_data.Last_Purchased_Date" placeholder="" class="form-control py-4 px-4" id="lastPurchasedDate">
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button class="btn btn-primary btn-block py-2">
+                                <span class="font-weight-bold">Update Customer <i class="fas fa-user-edit ml-2"></i></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="~/img/update.svg" alt="Update SVG" class="img-fluid" />
+                <h3>Update Customer Details</h3>
+            </div>
+        </div>
+    </section>
+</div>

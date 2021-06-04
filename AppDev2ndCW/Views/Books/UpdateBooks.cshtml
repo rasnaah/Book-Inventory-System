@@ -1,0 +1,134 @@
+﻿
+@{ Layout = "_DashboardLayout"; }
+
+
+
+<div class="container-fluid px-xl-5">
+    <section class="py-5">
+
+        <div class="row py-5 mt-4 align-items-center">
+
+            <!-- Update User Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form action="/Books/EditBooks/@ViewBag.books_data.books.Id" method="post">
+                    <div class="row">
+
+                        <!-- Book Title -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-book text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="title" type="text" value="@ViewBag.books_data.books.Book_name" name="bookName" placeholder="Book Title" class="form-control bg-white border-left-0 border-md" required>
+                        </div>
+
+
+                        <!-- Book Description -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <textarea id="description" name="description" value="@ViewBag.books_data.books.Description" placeholder="Book Description" class="form-control bg-white border-left-0 border-md" rows="8"></textarea>
+                        </div>
+
+                        <!-- Book Category -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-book-open text-muted"></i>
+                                </span>
+                            </div>
+                            <select id="countryCode" name="category" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted" required>
+                                <option value="@ViewBag.books_data.books.Category_Id">@ViewBag.books_data.categories.Category</option>
+                                @foreach (var category in ViewBag.categoryList)
+                                {
+                                    <option value="@category.Id"> @category.Category</option>
+                                }
+                                </select>
+                        </div>
+
+
+                        <!-- Book Author  -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-address-book text-muted"></i>
+                                </span>
+                            </div>
+                            <select id="author"  name="author" class="form-control custom-select bg-white border-left-0 border-md" required>
+                                <option value="@ViewBag.books_data.books.Author_Id">@ViewBag.books_data.author.Author</option>
+                                @foreach (var author in ViewBag.authorList)
+                                {
+                                    <option value="@author.Id"> @author.Author</option>
+}
+                            </select>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="input-group col-lg-6 mb-4" required>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-money-bill text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="price" type="number" value="@ViewBag.books_data.books.Price" name="rate" placeholder="Price" class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Stock Quantity -->
+                        <div class="input-group col-lg-6 mb-4" required>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-list-ol text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="quantity" type="number" value="@ViewBag.books_data.books.Stock_Quantity" name="quantity" placeholder="Quantity in Stock" class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Last Stocked Date -->
+                        <div class="col-md-6 mb-0">
+                            <label for="lastStockedDate">Last Stocked Date <i class="fas fa-ellipsis-h ml-2"></i></label>
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-calendar text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="date" name="lastStockedDate" value="@ViewBag.books_data.books.Stocked_Date" placeholder="" class="form-control py-4 px-4" id="lastStockedDate">
+                        </div>
+
+                        <!-- Last Sales Date -->
+                        <div class="col-md-6 mb-0">
+                            <label for="lastSalesDate">Last Sales Date <i class="fas fa-ellipsis-h ml-2"></i></label>
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-calendar text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="date" name="lastSalesDate" value="@ViewBag.books_data.books.Sales_Date" placeholder="" class="form-control py-4 px-4" id="lastSalesDate">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button class="btn btn-primary btn-block py-2">
+                                <span class="font-weight-bold">Update Book <i class="fas fa-pencil-alt ml-2"></i></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-5 p-5 mb-5 mb-md-0">
+                <img src="~/img/update.svg" alt="Update SVG" class="img-fluid" />
+                <h3>Update Book Details <i class="fas fa-pencil-alt"></i></h3>
+            </div>
+        </div>
+    </section>
+</div>
+
