@@ -1,9 +1,7 @@
 ﻿
 Getting Started
-## @Author team development
-
-
-Date: 29th April 2021 samyush -> 
+## @Author team development, Rasana
+ 
 					1. Admin and Normal user adding dispute solved
 					2. Word File added for task completion tracking
 
@@ -48,8 +46,6 @@ Controller method work
 					   13. EditAuthors() -> need to pass id while executing
 					   14. Add toastr for add, delete book inventory and add, delete book category
 
-
---------------------- NOTES BY SOLOMAN --------------------
 Controllers for Update Page (Form)
 	1. Book Update --> UpdateBooks() - (BooksController)
 	2. Users Update --> UpdateUsers() - (AdminController)
@@ -84,7 +80,6 @@ validation added
 passing of data to view working
 #################################
 
-![samyush Banner](http://1.bp.blogspot.com/-15jx1ht9-Ys/VH5CasSmByI/AAAAAAAATdg/S9jVPJpaSmU/s1600/chee1.jpg)
 
 
 # App Dev 2nd CW Group	
@@ -94,7 +89,6 @@ App Dev 2nd CW using C# asp.net core.
 ## For Getting Started
 Introduction above.
 
-## @author Team Development(https://github.com/Samyush)
 
 
 - [Lab: Write your first here we go app](https://flutter.dev/docs/get-started/codelab)
