@@ -74,28 +74,4 @@ View Pages:
 						(Customer)
 						1. Increased table width
 
-Date: 27th April 2021
-samyush- logout directed to index.html
-validation added 
-passing of data to view working
-#################################
-
-
-
-# App Dev 2nd CW Group	
-
-App Dev 2nd CW using C# asp.net core.
-
-## For Getting Started
-Introduction above.
-
-
-
-- [Lab: Write your first here we go app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful C# documents](https://flutter.dev/docs/cookbook)
-
->I am a flutter and laravel full stack developer, you can check upon [my instagram profile](https://www.instagram.com/samyush/)
-
-![End Banner](https://github.com/londonappbrewery/Images/blob/master/readme-end-banner.png)
-
 
